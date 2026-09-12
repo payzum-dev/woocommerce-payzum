@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48" role="img" aria-label="Payzum">
+  <rect width="48" height="48" rx="10" fill="#070a12"/>
+  <path d="M15 34V14h10.5a6.5 6.5 0 0 1 0 13H20" fill="none" stroke="#2DE2C6" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="33" cy="17" r="2.5" fill="#3FE08A"/>
+</svg>
