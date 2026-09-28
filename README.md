@@ -36,7 +36,7 @@ custody. No chargebacks, no card networks, no PCI surface.
 ## Installation
 
 **From the release zip (recommended).** Download
-[`payzum-crypto-payments-1.5.0.zip`](https://github.com/payzum-dev/woocommerce-payzum/releases/latest), then in WordPress go to
+[`payzum-crypto-payments-1.5.1.zip`](https://github.com/payzum-dev/woocommerce-payzum/releases/latest), then in WordPress go to
 **Plugins → Add New → Upload Plugin**, pick the zip and activate it. The archive unpacks to
 `payzum-crypto-payments/`, the folder name WordPress expects.
 

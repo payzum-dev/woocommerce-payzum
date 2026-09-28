@@ -4,7 +4,7 @@ Tags: woocommerce, cryptocurrency, stablecoin, usdc, payment gateway
 Requires at least: 5.6
 Tested up to: 7.1
 Requires PHP: 8.1
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,10 @@ Coin icons are from the open-source cryptocurrency-icons set (MIT license, spoth
 a few network icons are original monograms bundled with this plugin.
 
 == Changelog ==
+
+= 1.5.1 =
+* Plugin URI now points at the plugin's own repository, so it differs from the Author URI as
+  the plugin directory requires. No functional change.
 
 = 1.5.0 =
 * The IPN now verifies the amount and currency paid against the order before it is completed.
