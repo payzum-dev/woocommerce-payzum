@@ -3,7 +3,7 @@
  * Plugin Name: Payzum Crypto & Stablecoin Payments for WooCommerce
  * Plugin URI:  https://github.com/payzum-dev/woocommerce-payzum
  * Description: Accept crypto and stablecoins (USDC/USDT, multi-chain) in WooCommerce with Payzum. Buyers choose the coin on the Payzum checkout. Non-custodial — funds settle to your own wallet.
- * Version:     1.5.1
+ * Version:     1.5.2
  * Author:      Payzum
  * Author URI:  https://payzum.com
  * License:     GPL-2.0-or-later
@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // No direct access.
 }
 
-define( 'PAYZUM_WC_VERSION', '1.5.0' );
+define( 'PAYZUM_WC_VERSION', '1.5.2' );
 define( 'PAYZUM_WC_PLUGIN_FILE', __FILE__ );
 define( 'PAYZUM_WC_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
@@ -56,7 +56,7 @@ function payzum_wc_init() {
 
 	require_once PAYZUM_WC_PLUGIN_DIR . 'includes/class-wc-gateway-payzum.php';
 
-	payzum_wc_maybe_upgrade();
+	payzum_wc_maybe_migrate();
 
 	add_filter( 'woocommerce_payment_gateways', 'payzum_wc_add_gateway' );
 	add_filter(
@@ -100,14 +100,14 @@ function payzum_wc_missing_sdk_notice() {
 }
 
 /**
- * One-time upgrade routine.
+ * One-time settings migration.
  *
  * 1.1.0 moved coin selection out of the plugin: the buyer now picks on the Payzum hosted checkout,
  * limited to the merchant's allowlist (Payzum dashboard -> Merchants -> Settings -> Accepted tokens).
  * The old per-store selection is therefore meaningless — drop it rather than leave dead settings
  * that no longer affect anything.
  */
-function payzum_wc_maybe_upgrade() {
+function payzum_wc_maybe_migrate() {
 	if ( get_option( 'payzum_wc_version' ) === PAYZUM_WC_VERSION ) {
 		return;
 	}
